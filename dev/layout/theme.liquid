@@ -29,7 +29,7 @@
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
-
+    {{ 'main.css' | asset_url | stylesheet_tag }}
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
   {% include 'oldIE-js' %}
@@ -394,6 +394,8 @@
 
   {{ 'fastclick.min.js' | asset_url | script_tag }}
   {{ 'timber.js' | asset_url | script_tag }}
+  <!-- //bundle js -->
+  {{ 'bundle.js' | asset_url | script_tag }}
 
   {% comment %}
     Template-specific js

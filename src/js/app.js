@@ -1,6 +1,11 @@
+var $ = require('jquery');
+//load angular
+var angular = require('angular');
 var home = require('./includes/home');
 
-var app = {
+var app = angular.module('LOD', [ 'ngMaterial' ]);
+
+var main = {
 
     init: function() {
         home.init();
@@ -8,4 +13,4 @@ var app = {
 
 }
 
-$(document).ready( app.init );
+$(document).ready( main.init );

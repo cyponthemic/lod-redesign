@@ -60,3 +60,5 @@ gulp-config.js
 
 
 dev/assets/main.css
+
+dev/assets/bundle.js

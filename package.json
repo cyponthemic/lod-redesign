@@ -1,0 +1,25 @@
+{
+  "name": "local_continous_integration",
+  "version": "1.0.0",
+  "description": "Basic shopify workflow",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-shopify-upload": "^2.0.0",
+    "gulp-watch": "^4.3.11"
+  },
+  "devDependencies": {
+    "gulp-shopify-upload": "^2.0.0",
+    "gulp-watch": "^4.3.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://alexchavet_ie@bitbucket.org/alexchavet_ie/local_continous_integration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/alexchavet_ie/local_continous_integration#readme"
+}

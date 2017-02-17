@@ -48,6 +48,11 @@ Temporary Items
 .idea/
 
 # =========================
+# Gulp
+# =========================
+/node_modules
+
+# =========================
 # Environements
 # =========================
 gulp-config.js

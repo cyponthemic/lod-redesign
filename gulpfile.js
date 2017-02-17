@@ -1,16 +1,17 @@
 // Gulp plugin setup
-var gulpConfig = require('gulp-config.js');
+
 var gulp = require('gulp');
+var gulpConfig = require('./gulp/gulp-config.js');
 // Watches single files
 var watch = require('gulp-watch');
 var gulpShopify = require('gulp-shopify-upload');
 var options = {
-    "basePath": "dev/"
+    "basePath": "src/"
 };
-var config = gulpConfig.data;
+var config = gulpConfig.apiKeys;
 
 gulp.task('shopifywatch', function() {
-    return watch('./staging/+(assets|layout|config|snippets|templates|locales)/**')
+    return watch('./src/+(assets|layout|config|snippets|templates|locales)/**')
         .pipe(
             gulpShopify(
                 config.dev.apiKey,
@@ -23,13 +24,14 @@ gulp.task('shopifywatch', function() {
 });
 
 gulp.task('deploy', function() {
-    return gulp.src('./+(assets|layout|config|snippets|templates|locales)/**')
+    return gulp.src('./dev/+(assets|layout|config|snippets|templates|locales)/**')
         .pipe(
             gulpShopify(
                 config.dev.apiKey,
                 config.dev.password,
                 config.dev.siteUrl,
-                config.dev.themeId
+                config.dev.themeId,
+                options
             )
         );
 });

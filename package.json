@@ -1,5 +1,5 @@
 {
-  "name": "local_continous_integration",
+  "name": "timber_gulp",
   "version": "1.0.0",
   "description": "Basic shopify workflow",
   "main": "gulpfile.js",

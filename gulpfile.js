@@ -3,12 +3,21 @@ var gulp = require('gulp');
 var gulpConfig = require('./gulp/gulp-config.js');
 // Watches single files
 var watch = require('gulp-watch');
+// Uploads to shopify
 var gulpShopify = require('gulp-shopify-upload');
 //Compile sass
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 // Notifies of errors
 var notify = require("./gulp/gulp-handle-error.js");
+// Concats your JS files
+var browserify = require('browserify');
+var watchify = require('watchify');
+var source = require('vinyl-source-stream');
+// Image optimization
+var imagemin   = require('gulp-imagemin');
+var changed    = require('gulp-changed');
+
 
 gulp.task('sass', function () {
     //process scss
@@ -23,6 +32,39 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
     //watch scss
     gulp.watch('./src/scss/**/*.{sass,scss}', ['sass']);
+    //watch js
+    gulp.watch('./src/js/**/*.js', ['browserify']);
+    //watch images
+    gulp.watch('src/images/*.{jpg,jpeg,png,gif,svg}', ['images']);
+
+    var watcher = watchify(browserify({
+        // Specify the entry point of your app
+        entries: ['./src/js/app.js'],
+        debug: true,
+        cache: {}, packageCache: {}, fullPaths: true
+    }));
+
+    return watcher.on('update', function() {
+        watcher.bundle()
+            .pipe(source('bundle.js'))
+            .pipe(gulp.dest('./dev/assets/'))
+    })
+});
+
+gulp.task('browserify', function() {
+    return browserify('./src/js/app.js')
+        .bundle()
+        .on('error', notify.error)
+        //Pass desired output filename to vinyl-source-stream
+        .pipe(source('bundle.js'))
+        // Start piping stream to tasks!
+        .pipe(gulp.dest('./dev/assets/'));
+});
+gulp.task('images', function() {
+    return gulp.src('./src/images/**')
+        .pipe(changed('./dev/assets/')) // Ignore unchanged files
+        .pipe(imagemin()) // Optimize
+        .pipe(gulp.dest('./dev/assets/'))
 });
 
 //default dist folder to upload on watch

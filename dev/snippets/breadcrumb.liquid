@@ -1,10 +1,21 @@
+<nav>
+  <div class="nav-wrapper">
+    <div class="col s12">
+      <a href="#!" class="breadcrumb">First</a>
+      <a href="#!" class="breadcrumb">Second</a>
+      <a href="#!" class="breadcrumb">Third</a>
+    </div>
+  </div>
+</nav>
 <!-- /snippets/breadcrumb.liquid -->
 {% comment %}
   Documentation - http://docs.shopify.com/support/your-website/navigation/creating-a-breadcrumb-navigation
 {% endcomment %}
 {% unless template == 'index' or template == 'cart' %}
-<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-  <a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+<nav role="navigation" aria-label="breadcrumbs">
+  <div class="nav-wrapper">
+    <div class="col s12">
+  <a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}" class="breadcrumb">{{ 'general.breadcrumbs.home' | t }}</a>
 
   {% if template contains 'product' %}
 
@@ -51,7 +62,7 @@
   {% elsif template contains 'page' %}
 
    <span aria-hidden="true">&rsaquo;</span>
-   <span>{{ page.title }}</span>
+   <span class="breadcrumb">{{ page.title }}</span>
 
   {% else %}
 
@@ -59,5 +70,7 @@
    <span>{{ page_title }}</span>
 
   {% endif %}
+    </div>
+  </div>
 </nav>
 {% endunless %}

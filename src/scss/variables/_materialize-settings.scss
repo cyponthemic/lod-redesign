@@ -33,14 +33,15 @@
 //// 1. Colors
 //// ==========================================================================
 //
-$primary-color: color("green", "lighten-2") !default;
-//$primary-color-light: lighten($primary-color, 15%) !default;
-//$primary-color-dark: darken($primary-color, 15%) !default;
-//
-$secondary-color: color("materialize-red", "lighten-2");
-//$success-color: color("green", "base") !default;
-//$error-color: color("red", "base") !default;
-//$link-color: color("light-blue", "darken-1") !default;
+
+$primary-color: $green-300;
+$primary-color-light: $green-100;
+$primary-color-dark: $green-500;
+
+$secondary-color: $red-300;
+$success-color: color("green", "base") !default;
+$error-color: $red-300;
+$link-color: $blue-300;
 //
 //
 //// 2. Badges
@@ -279,12 +280,12 @@ $secondary-color: color("materialize-red", "lighten-2");
 //
 //$off-black: rgba(0, 0, 0, 0.87) !default;
 //// Header Styles
-//$h1-fontsize: 4.2rem !default;
-//$h2-fontsize: 3.56rem !default;
-//$h3-fontsize: 2.92rem !default;
-//$h4-fontsize: 2.28rem !default;
-//$h5-fontsize: 1.64rem !default;
-//$h6-fontsize: 1rem !default;
+$h1-fontsize: 4.2rem;
+$h2-fontsize: 3.56rem;
+$h3-fontsize: 2.92rem;
+$h4-fontsize: 2.28rem;
+$h5-fontsize: 1.64rem;
+$h6-fontsize: 1rem;
 //
 //
 //// 21. Footer

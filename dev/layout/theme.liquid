@@ -288,9 +288,12 @@
         </div>
       </div>
     </nav>
-    <main class="wrapper main-content" role="main">
 
-      {{ content_for_layout }}
+    {% include 'hp__home-banner' %}
+    {% include 'hp__page-intro' %}
+    <main class="container" role="main"> <!-- wrapper main-content -->
+
+        {{ content_for_layout }}
 
     </main>
 
@@ -390,11 +393,11 @@
     </footer>
     <!-- //site-footer -->
   </div>
-
+<!-- //bundle js -->
+  {{ 'bundle.js' | asset_url | script_tag }}
   {{ 'fastclick.min.js' | asset_url | script_tag }}
   {{ 'timber.js' | asset_url | script_tag }}
-  <!-- //bundle js -->
-  {{ 'bundle.js' | asset_url | script_tag }}
+
 
   {% comment %}
     Template-specific js

@@ -36,7 +36,7 @@ gulp.task('watch', function () {
     //watch js
     gulp.watch('./src/js/**/*.js', ['browserify']);
     //watch images
-    gulp.watch('src/images/*.{jpg,jpeg,png,gif,svg}', ['images']);
+    gulp.watch('src/images/**/*.{jpg,jpeg,png,gif,svg}', ['images']);
 
     var watcher = watchify(browserify({
         // Specify the entry point of your app

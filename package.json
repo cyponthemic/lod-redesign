@@ -5,8 +5,10 @@
   "main": "gulpfile.js",
   "dependencies": {
     "angular": "^1.5.9",
+    "browserify-shim": "^3.8.13",
     "gulp": "^3.9.1",
     "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
     "gulp-shopify-upload": "^2.0.0",
     "gulp-watch": "^4.3.11",
     "materialize-css": "^0.98.0",
@@ -26,7 +28,21 @@
     "watchify": "^3.9.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "materialize-js": "./node_modules/materialize-css/bin/materialize.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "materialize": "./node_modules/materialize-css/bin/materialize.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "materialize": "materialize"
   },
   "repository": {
     "type": "git",

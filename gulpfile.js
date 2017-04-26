@@ -15,6 +15,7 @@ var browserify = require('browserify');
 var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 // Image optimization
+var rename = require('gulp-rename');
 var imagemin   = require('gulp-imagemin');
 var changed    = require('gulp-changed');
 
@@ -35,7 +36,7 @@ gulp.task('watch', function () {
     //watch js
     gulp.watch('./src/js/**/*.js', ['browserify']);
     //watch images
-    gulp.watch('src/images/*.{jpg,jpeg,png,gif,svg}', ['images']);
+    gulp.watch('src/images/**/*.{jpg,jpeg,png,gif,svg}', ['images']);
 
     var watcher = watchify(browserify({
         // Specify the entry point of your app
@@ -62,6 +63,7 @@ gulp.task('browserify', function() {
 });
 gulp.task('images', function() {
     return gulp.src('./src/images/**')
+        .pipe(rename({dirname: ''}))
         .pipe(changed('./dev/assets/')) // Ignore unchanged files
         .pipe(imagemin()) // Optimize
         .pipe(gulp.dest('./dev/assets/'))

@@ -1,0 +1,24 @@
+//Banner
+.section.section--home-banner{
+  .main-logo{
+    width: 100%;
+    height: auto;
+  }
+  .facebook_thumbnail{
+    display: none;
+  }
+  h1{
+    color: #fff;
+    padding: 0;
+    display: block;
+    font-size: 22px;
+    text-align: left;
+    letter-spacing: 0px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+}
+.section--primary{
+  background: $green-100;
+}

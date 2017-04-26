@@ -3,34 +3,16 @@
 {% capture _interactive_banner_logo %}logo-rounded-white.png{% endcapture %}
 {% capture _interactive_banner_logo-alt %}logo-rounded-white.png{% endcapture %}
 {% if template == "index" %}
-    <div class="section section--home-banner section--primary">
+    <div class="section section--home-banner section--primary"
+         style="background-image: url('{{ 'stock-farmer-hand-box.jpg' | asset_url }}');"
+    >
         <div class="container">
             <div class="grid grid--center">
-            </div>
-            <div class="grid grid--center">
-                <div class="grid__item one-quarter">
-                    <img class="main-logo" src="{{ _interactive_banner_logo | asset_url }}" alt=""/>
-                </div>
                 <div class="grid__item one-half">
                     <h1>
                         Fancy a box of certified organic produce delivered to your door?
                         Check if we’re delivering to your neighbourhood.
                     </h1>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix"><i class="material-icons">person_pin_circle</i></i>
-                        <input id="icon_prefix" type="text" class="validate">
-                        <label for="icon_prefix">Enter your address</label>
-                    </div>
-                    <div class="form-inline sign-up-form pb-10" style="display: none">
-                        <input type="text" id="postcode-input" name="autoField" class="form-control"
-                               placeholder="Enter your address">
-                        <button type="submit" class="waves-effect waves-light btn">
-                            <span>Let's go</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="grid__item push--large--one-third one-third">
-                    &nbsp;
                 </div>
             </div>
         </div>

@@ -2,6 +2,9 @@
 @import "./node_modules/materialize-css/sass/components/color";
 // Variables;
 @import "variables";
+//Mixins
+@import "mixins/breakpoints";
+@import "mixins/font-style";
 // Materialize;
 @import "./node_modules/materialize-css/sass/materialize.scss";
 
@@ -11,3 +14,5 @@
 @import "atoms";
 // Molecules;
 @import "molecules";
+// Components;
+@import "components";

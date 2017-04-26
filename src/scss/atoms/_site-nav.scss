@@ -1,0 +1,29 @@
+.site-nav__link{
+  @include site-nav-style;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0px;
+    left: 0;
+    background-color: $green-500;
+    visibility: hidden;
+    -webkit-transform: translateX(-100%) scaleX(0) ;
+    transform: translateX(-100%) scaleX(0);
+    -webkit-transition: all .6s ease-in-out 0s;
+    transition: all .6s ease-in-out 0s;
+  }
+  .site-nav--active>&:after,
+  &:hover:after {
+    visibility: visible;
+    -webkit-transform: translateX(0%) scaleX(1) ;
+    transform: translateX(0%) scaleX(1)  ;
+  }
+}
+.site-nav--mobile{
+  padding: 0 7.5px;
+}

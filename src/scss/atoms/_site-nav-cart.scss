@@ -1,0 +1,27 @@
+.lod-cart{
+  @include site-nav-style;
+  &__quantity{
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+    z-index: 5;
+    &:before{
+      content: "";
+      position: absolute;
+      background-color: #33CC99;
+      border-radius: 100%;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -7px;
+      z-index: -1;
+    }
+  }
+  &__label{
+
+  }
+  &__amount{
+    margin-right: 15px;
+  }
+}

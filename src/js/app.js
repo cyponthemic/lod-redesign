@@ -4,6 +4,8 @@ var $ = require("jquery"),
 var angular = require('angular');
 var home = require('./includes/home');
 var app = angular.module('LOD',[]);
+
+var ngMainNav = require('./ng/ngMainNav');
 var main = {
 
     init: function() {
@@ -12,6 +14,4 @@ var main = {
     }
 
 };
-
-
 $(document).ready( main.init );

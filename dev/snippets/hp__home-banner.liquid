@@ -3,18 +3,12 @@
 {% capture _interactive_banner_logo %}logo-rounded-white.png{% endcapture %}
 {% capture _interactive_banner_logo-alt %}logo-rounded-white.png{% endcapture %}
 {% if template == "index" %}
-    <div class="section section--home-banner section--primary"
-         style="background-image: url('{{ 'stock-farmer-hand-box.jpg' | asset_url }}');"
-    >
-        <div class="container">
-            <div class="grid grid--center">
-                <div class="grid__item one-half">
-                    <h1>
-                        Fancy a box of certified organic produce delivered to your door?
-                        Check if we’re delivering to your neighbourhood.
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="section section--home-banner section--primary">
+		<div class="section--home-banner__foreground">
+			<h1>
+				Fancy a box of certified organic produce delivered to your door?
+				Check if we’re delivering to your neighbourhood.
+			</h1>
+		</div>
+	</div>
 {% endif %}

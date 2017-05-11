@@ -1,5 +1,6 @@
 @mixin site-nav-style{
-  font-family: Lato-Bold;
+  font-family: Lato;
+  font-weight: 700;
   font-size: 14px;
   color: #fff;
   @include breakpoint('md') {

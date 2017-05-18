@@ -7,7 +7,7 @@ var home = {
     },
 
     yourFunction: function() {
-        console.log('inside test home.js');
+        console.log('inside home.js');
     }
 }
 

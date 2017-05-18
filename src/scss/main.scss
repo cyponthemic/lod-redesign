@@ -1,18 +1,8 @@
 @import "./node_modules/materialize-css/sass/components/mixins";
 @import "./node_modules/materialize-css/sass/components/color";
 // Variables;
-@import "variables";
-//Mixins
-@import "mixins/breakpoints";
-@import "mixins/font-style";
+@import "variables/materialize-settings";
 // Materialize;
 @import "./node_modules/materialize-css/sass/materialize.scss";
-
-
-
-// Atoms;
-@import "atoms";
-// Molecules;
-@import "molecules";
-// Components;
-@import "components";
+@import "variables/colors";
+@import "atoms/typography";

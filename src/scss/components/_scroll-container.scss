@@ -1,0 +1,23 @@
+.scroll {
+  &.-home-page {
+    height: calc(100vh - 55px);
+    background: #e2e2e2;
+    overflow: scroll;
+  }
+
+  &__content {
+    height: 400vh;
+  }
+}
+
+.spacer{
+  content: '';
+  display: block;
+}
+
+.box{
+  @include aspect-ratio(16, 9);
+  content: '';
+  width: 60%;
+  background: black;
+}

@@ -1,9 +1,10 @@
 var $ = require('jquery');
+var Barba = require('barba.js');
+var Scrollbar = require('smooth-scrollbar');
 //load angular
-var angular = require('angular');
+//var angular = require('angular');
 var home = require('./includes/home');
 
-var app = angular.module('LOD', [ 'ngMaterial' ]);
 
 var main = {
 

@@ -82,7 +82,7 @@ gulp.task('shopifywatch', function() {
                 config.dev.siteUrl,
                 config.dev.themeId,
                 options
-            )
+            ).pipe(notify("Uploaded!"));
         );
 });
 

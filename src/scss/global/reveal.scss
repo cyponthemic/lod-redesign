@@ -1,0 +1,6 @@
+.js-reveal {
+  opacity: 0;
+  &ed{
+    transition: opacity 600ms;
+  }
+}

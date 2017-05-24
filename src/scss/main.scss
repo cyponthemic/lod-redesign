@@ -2,7 +2,18 @@
 @import "./node_modules/materialize-css/sass/components/color";
 // Variables;
 @import "variables/materialize-settings";
+@import "variables/header";
+@import "variables/mixins";
 // Materialize;
-@import "./node_modules/materialize-css/sass/materialize.scss";
+
+//lib
+@import "vendor/scroll";
+
+@import "materialize/materialize";
 @import "variables/colors";
+
+//atoms
 @import "atoms/typography";
+
+//components
+@import "components/scroll-container"
